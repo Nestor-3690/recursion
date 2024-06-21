@@ -10,3 +10,16 @@ function fibs(n) {
   }
   return array;
 }
+
+function fibsRec(n) {
+  const array = [];
+  if (n === 3) {
+    array.push(0, 1, 1);
+    return array;
+  } else {
+    const newArr = array.concat(fibsRec(n - 1));
+    let len = newArr.length;
+    newArr.push(newArr[len - 1] + newArr[len - 2]);
+    return newArr;
+  }
+}
