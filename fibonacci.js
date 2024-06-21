@@ -13,8 +13,11 @@ function fibs(n) {
 
 function fibsRec(n) {
   const array = [];
-  if (n === 3) {
-    array.push(0, 1, 1);
+  if (n < 2) {
+    if (n < 1) return [];
+    else return [0];
+  } else if (n === 2) {
+    array.push(0, 1);
     return array;
   } else {
     const newArr = array.concat(fibsRec(n - 1));
