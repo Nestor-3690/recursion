@@ -1,8 +1,10 @@
+console.log(fibsRec(8));
+
 function fibs(n) {
   const array = [];
   for (let i = 0; i < n; i++) {
     if (i === 0) array.push(i);
-    else if (i === 1 || i === 2) array.push(1);
+    else if (i === 1) array.push(1);
     else {
       let len = array.length;
       array.push(array[len - 1] + array[len - 2]);
@@ -13,10 +15,9 @@ function fibs(n) {
 
 function fibsRec(n) {
   const array = [];
-  if (n < 2) {
-    if (n < 1) return [];
-    else return [0];
-  } else if (n === 2) {
+  if (n < 1) return [];
+  else if (n === 1) return [0];
+  else if (n === 2) {
     array.push(0, 1);
     return array;
   } else {
